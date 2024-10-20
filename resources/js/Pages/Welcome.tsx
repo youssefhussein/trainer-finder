@@ -23,6 +23,7 @@ function TabPanel(props: TabPanelProps) {
             id={`vertical-tabpanel-${index}`}
             aria-labelledby={`vertical-tab-${index}`}
             {...other}
+            className="bg-slate-300"
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
@@ -64,6 +65,7 @@ function a11yProps(index: number) {
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
                 sx={{ borderRight: 1, borderColor: "divider" }}
+                indicatorColor="secondary"
             >
                 <Tab label="Item One" {...a11yProps(0)} />
                 <Tab label="Item Two" {...a11yProps(1)} />
@@ -71,8 +73,14 @@ function a11yProps(index: number) {
                 <Tab label="Item Four" {...a11yProps(3)} />
             </Tabs>
             <TabPanel value={value} index={0}>
-                <img src="/imgs/dumbell.jpg" alt="img" className="max-w-80 max-h-80" />
-                <h3 className="font-semibold items-center text-orange-500">We are the coolest no cap</h3>
+                <img
+                    src="/imgs/dumbell.jpg"
+                    alt="img"
+                    className="max-h-80 max-w-80"
+                />
+                <h3 className="items-center font-semibold text-orange-500">
+                    We are the coolest no cap
+                </h3>
                 <p className="text-slate-800"> some cool af description</p>
             </TabPanel>
             <TabPanel value={value} index={1}>
