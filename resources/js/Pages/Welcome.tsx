@@ -65,9 +65,8 @@ function a11yProps(index: number) {
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
                 sx={{ borderRight: 1, borderColor: "divider" }}
-                indicatorColor="secondary"
             >
-                <Tab label="Item One" {...a11yProps(0)} />
+                <Tab label="Body-Building" {...a11yProps(0)} />
                 <Tab label="Item Two" {...a11yProps(1)} />
                 <Tab label="Item Three" {...a11yProps(2)} />
                 <Tab label="Item Four" {...a11yProps(3)} />
@@ -84,16 +83,49 @@ function a11yProps(index: number) {
                 <p className="text-slate-800"> some cool af description</p>
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Item Two
+                <img
+                    src="/imgs/swimming.jpg"
+                    alt="img"
+                    className="max-h-80 max-w-80"
+                />
+                <h3 className="items-center font-semibold text-orange-500">
+                    We are the coolest no cap
+                </h3>
+                <p className="text-slate-800"> some cool af description</p>{" "}
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <img
+                    src="/imgs/yogaa.jpg"
+                    alt="img"
+                    className="max-h-80 max-w-80"
+                />
+                <h3 className="items-center font-semibold text-orange-500">
+                    We are the coolest no cap
+                </h3>
+                <p className="text-slate-800"> some cool af description</p>{" "}
             </TabPanel>
             <TabPanel value={value} index={3}>
-                Item Four
+                <img
+                    src="/imgs/football-premium.jpg"
+                    alt="img"
+                    className="max-h-80 max-w-80"
+                />
+                <h3 className="items-center font-semibold text-orange-500">
+                    We are the coolest no cap
+                </h3>
+                <p className="text-slate-800"> some cool af description</p>{" "}
             </TabPanel>
             <TabPanel value={value} index={4}>
-                Item Five
+                <img
+                    src="/imgs/powder.jpg"
+                    alt="img"
+                    className="max-h-80 max-w-80"
+                />
+                <h3 className="items-center font-semibold text-orange-500">
+                    We are the coolest no cap
+                </h3>
+                <p className="text-slate-800"> some cool af description</p>{" "}
+
             </TabPanel>
         </Box>
     );
@@ -118,13 +150,16 @@ function LoginNav(auth: any) {
 
 
 export default function Welcome({ auth }: PageProps<{}>) {
-    console.log(typeof auth);
     return (
-        <>
+        <div className="w-screen h-screen" >
             <Head title="Welcome" />
 
             <LoginNav auth={auth} />
-            <VerticalTabs />
-        </>
+            <div
+            className="flex flex-col items-center justify-center w-full h-1/3" >
+            <VerticalTabs  />
+
+            </div>
+        </div>
     );
 }
