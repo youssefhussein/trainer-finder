@@ -12,10 +12,19 @@ import {
     navigationMenuTriggerStyle,
     NavigationMenuViewport,
 } from "@/Components/ui/navigation-menu";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/Components/ui/card";
+
 
 function LoginNav({ auth }: any) {
     return (
-        <NavigationMenu className="fixed flex flex-row top-3   bg-inherit justify-around">
+        <NavigationMenu className=" flex flex-row py-3  bg-inherit justify-around">
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <Link href={route("welcome")}>
@@ -83,10 +92,47 @@ export default function Welcome({ auth }: PageProps<{}>) {
         <div className="h-screen w-screen">
             <Head title="Welcome" />
 
-            <LoginNav auth={auth}/>
-            <div className="flex h-1/3 w-full flex-col items-center justify-center">
-               hello
-            </div>
+            <LoginNav auth={auth} />
+            <main className="text-center pb-5">
+                <h1 className="text-6xl font-bold py-3">
+                    Welcome to Trainer Finder
+                </h1>
+                <h3 className="text-3xl font-bold">
+                    Your ultimate destination for all things sports!
+                </h3>
+            </main>
+            <section>
+                <h2 className="py-7 text-center text-4xl font-bold">
+                    {" "}
+                    Featured Sports
+                </h2>
+                <div className="flex h-1/3 w-full flex-row items-center justify-center gap-x-7">
+                    <Card className="flex min-w-72 flex-col gap-9 px-4">
+                        <CardTitle className="pt-3 text-center">
+                            Basketball
+                        </CardTitle>
+                        <CardContent className="max-w-prose pb-3">
+                            Join us for the latest news, scores, and events.
+                        </CardContent>
+                    </Card>
+                    <Card className="flex min-w-72 flex-col gap-9 px-4">
+                        <CardTitle className="py-3 text-center">
+                            Soccer
+                        </CardTitle>
+                        <CardContent className="max-w-prose pb-3">
+                            Get updates on your favorite teams and matches.
+                        </CardContent>
+                    </Card>
+                    <Card className="flex min-w-72 flex-col gap-9 px-4">
+                        <CardTitle className="py-3 text-center">
+                            Fitness
+                        </CardTitle>
+                        <CardContent className="max-w-prose pb-3">
+                            Find workout tips, routines, and personal trainers,
+                        </CardContent>
+                    </Card>
+                </div>
+            </section>
         </div>
     );
 }
